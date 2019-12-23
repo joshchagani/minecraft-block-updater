@@ -1,0 +1,6 @@
+{
+	"eslint.workingDirectories": [
+		{ "directory": "./react", "changeProcessCWD": true },
+		{ "directory": "./node", "changeProcessCWD": true }
+	]
+}

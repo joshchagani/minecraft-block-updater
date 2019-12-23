@@ -1,2 +1,7 @@
-# minecraft-block-updater
-A really, really simple interface in order to update Minecraft blocks with a GUI.
+# Minecraft Block Updater
+
+This project is used to update the database of Minecraft blocks.
+
+## To come
+
+Me filling out this README...
