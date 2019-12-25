@@ -1,16 +1,18 @@
 {
-  "name": "minecraft-database-connection",
-  "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "mongoose": "^5.8.1"
-  }
+	"name": "minecraft-block-database",
+	"version": "0.1.0",
+	"description": "Connects to MongoDB and provies RESTful goodness",
+	"main": "server.js",
+	"scripts": {
+		"start": "nodemon server.js"
+	},
+	"author": "Joshua Chagani",
+	"license": "ISC",
+	"dependencies": {
+		"cors": "^2.8.5",
+		"dotenv": "^8.2.0",
+		"express": "^4.17.1",
+		"mongoose": "^5.8.1",
+		"nodemon": "^2.0.2"
+	}
 }

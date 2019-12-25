@@ -1,4 +1,10 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 📦 Minecraft Block Updater - Frontend
+
+It's a pretty bare bones app with one or two fetch calls to a database.
+
+## 🎨 Styles
+
+This project is using TailwindCSS for styling. Why? Because utility-first styling is the grooviest! This is a pretty simple application so the amount of time I spent getting Tailwind and Purge to work is borderline comical. 
 
 ## Available Scripts
 
@@ -66,3 +72,5 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `yarn build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). 

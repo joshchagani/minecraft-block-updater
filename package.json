@@ -4,12 +4,15 @@
 	"description": "Starts all of the frontend and backend processes",
 	"main": "index.js",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"dev:database": "cd node && yarn start",
+		"dev:frontend": "cd react; yarn start",
+		"start": "concurrently \"yarn dev:database\" \"yarn dev:frontend\""
 	},
-	"author": "",
+	"author": "Joshua Chagani",
 	"license": "ISC",
 	"dependencies": {},
 	"devDependencies": {
+		"concurrently": "^5.0.2",
 		"eslint": "^6.8.0",
 		"eslint-config-airbnb-base": "^14.0.0",
 		"eslint-config-prettier": "^6.7.0",

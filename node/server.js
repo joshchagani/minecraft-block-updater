@@ -1,14 +1,38 @@
-const mongoose = require("mongoose");
+require('dotenv').config()
+require('./models/Block')
+const mongoose = require('mongoose')
+const express = require('express')
+const app = express()
+const routes = require('./routes/index')
+const cors = require('cors')
 
-const url = "mongodb://127.0.0.1:27017/minecraft-blocks";
+// Connect to Database
+mongoose.Promise = global.Promise
+mongoose.connect(process.env.DATABASE, {
+	useNewUrlParser: true,
+	useUnifiedTopology: true,
+})
+mongoose.connection.on('error', err => {
+	console.error(`🙅 🚫 🙅 🚫 🙅 🚫 🙅 🚫 → ${err.message}`)
+})
 
-mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
+// Setup CORS
+const whitelist = ['http://localhost:3000']
+const corsOptions = {
+	origin: function(origin, callback) {
+		if (whitelist.indexOf(origin) !== -1) {
+			callback(null, true)
+		} else {
+			callback(new Error('Not allowed by CORS'))
+		}
+	},
+}
+app.use(cors(corsOptions))
 
-const db = mongoose.connection;
-db.once("open", _ => {
-  console.log("Database connected:", url);
-});
+// Routes
+app.use('/', routes)
 
-db.on("error", err => {
-  console.error("connection error:", err);
-});
+// Start listening
+app.listen(process.env.PORT, () => {
+	console.log(`Listening on port ${process.env.PORT}`)
+})
