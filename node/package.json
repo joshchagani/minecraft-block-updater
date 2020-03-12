@@ -1,18 +1,50 @@
 {
 	"name": "minecraft-block-database",
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"description": "Connects to MongoDB and provies RESTful goodness",
 	"main": "server.js",
 	"scripts": {
-		"start": "nodemon server.js"
+		"clean": "rimraf dist/*",
+		"copyEnv": "ts-node src/tools/CopyAssets",
+		"tsc": "tsc",
+		"build": "npm-run-all clean tsc",
+		"start": "nodemon",
+		"dev": "ts-node src/server.ts"
 	},
 	"author": "Joshua Chagani",
 	"license": "ISC",
+	"nodemonConfig": {
+		"watch": [
+			"*"
+		],
+		"ext": "ts",
+		"ignore": [
+			"./**/*.spec.ts",
+			"node_modules"
+		],
+		"exec": "ts-node src/server.ts"
+	},
 	"dependencies": {
+		"body-parser": "^1.19.0",
 		"cors": "^2.8.5",
 		"dotenv": "^8.2.0",
 		"express": "^4.17.1",
-		"mongoose": "^5.8.1",
+		"helmet": "^3.21.3",
+		"mongodb": "^3.5.4",
 		"nodemon": "^2.0.2"
+	},
+	"devDependencies": {
+		"@types/cors": "^2.8.6",
+		"@types/express": "^4.17.2",
+		"@types/helmet": "^0.0.45",
+		"@types/mongodb": "^3.3.16",
+		"@types/node": "^13.7.7",
+		"@types/shelljs": "^0.8.6",
+		"npm-run-all": "^4.1.5",
+		"rimraf": "^3.0.2",
+		"shelljs": "^0.8.3",
+		"ts-node": "^8.6.2",
+		"ts-node-dev": "^1.0.0-pre.44",
+		"typescript": "^3.8.3"
 	}
 }

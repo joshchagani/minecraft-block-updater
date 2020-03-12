@@ -1,9 +1,12 @@
 {
 	"name": "minecraft-block-builder",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Starts all of the frontend and backend processes",
 	"main": "index.js",
 	"scripts": {
+		"prebuild:server": "cd node && yarn",
+		"prebuild:front": "cd react && yarn",
+		"prebuild": "yarn && yarn prebuild:server && yarn prebuild:front",
 		"dev:database": "cd node && yarn start",
 		"dev:frontend": "cd react; yarn start",
 		"start": "concurrently \"yarn dev:database\" \"yarn dev:frontend\""
