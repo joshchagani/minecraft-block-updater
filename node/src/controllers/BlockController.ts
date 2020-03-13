@@ -1,6 +1,7 @@
 import { Request, Response, NextFunction } from 'express'
 import { MongoHelper } from '../tools/MongoHelper'
 import * as mongodb from 'mongodb'
+import { ImageUpload } from '../tools/ImageUpload'
 
 class BlockController {
 
@@ -36,7 +37,12 @@ class BlockController {
 		collection.findOneAndUpdate({ _id: new mongodb.ObjectId(id) }, { $set: {} })
 		res.end()
 	}
-	
+
+	public test(req: Request, res: Response, next: NextFunction) {
+		const x = new ImageUpload(`${process.cwd()}/dist/tools/195-0.png`)
+		// x.beginUploadProcess()
+		res.send('finished')
+	}
 }
 
 export { BlockController }
