@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 
 // Josh-made Components
 import ListBlocks from '../listBlocks/ListBlocks'
+import AddBlock from '../addBlock/AddBlock'
 
 // Images
 import addBlock from './images/add-block.svg'
@@ -36,9 +37,9 @@ function Navigation() {
 				</ul>
 			</nav>
 			<Switch>
-				{/* <Route path="/add-block">
+				<Route path="/add-block">
 					<AddBlock />
-				</Route> */}
+				</Route>
 				<Route path="/">
 					<ListBlocks />
 				</Route>

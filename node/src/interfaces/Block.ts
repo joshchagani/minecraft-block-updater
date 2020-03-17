@@ -1,6 +1,5 @@
-
 export interface IBlock {
-	_id: string;
+	_id?: string;
 	type: string;
 	meta: string;
 	name: string;
