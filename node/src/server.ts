@@ -28,12 +28,12 @@ class Server {
 		// Start listening
 		this.app.listen(process.env.PORT, async () => {
 			console.log(`Listening on port ${process.env.PORT}`)
-			// try {
-			// 	await MongoHelper.connect(process.env.DATABASE_URI)
-			// 	console.info(`Connected to DB → 👍 👍 👍`)
-			// } catch (err) {
-			// 	console.error(err)
-			// }
+			try {
+				await MongoHelper.connect(process.env.DATABASE_URI)
+				console.info(`Connected to DB → 👍 👍 👍`)
+			} catch (err) {
+				console.error(err)
+			}
 		})
 	}
 }

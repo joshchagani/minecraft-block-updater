@@ -66,14 +66,14 @@ export class ImageUpload {
 			Body: this.#fileContentLg,
 			ACL:'public-read',
 			ContentType: 'image/png',
-			Key: `test/LG-${this.#blockName}`,
+			Key: `lg/${this.#blockName}`,
 		}
 		this.#s3paramsSm = {
 			Bucket: this.#BUCKET,
 			Body: this.#fileContentSm,
 			ACL:'public-read',
 			ContentType: 'image/png',
-			Key: `test/SM-${this.#blockName}`,
+			Key: `sm/${this.#blockName}`,
 		}
 	}
 

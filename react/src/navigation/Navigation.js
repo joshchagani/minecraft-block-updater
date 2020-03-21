@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 
 // Josh-made Components
 import ListBlocks from '../listBlocks/ListBlocks'
-import AddBlock from '../addBlock/AddBlock'
+import BlockInfo from '../blockInfo/BlockInfo'
 
 // Images
 import addBlock from './images/add-block.svg'
@@ -25,7 +25,7 @@ function Navigation() {
 						Add
 					</li>
 					<li className="text-white text-center pt-5">
-						<Link to="/list-blocks">
+						<Link to="/">
 							<img
 								src={listBlocks}
 								alt="list blocks"
@@ -37,8 +37,11 @@ function Navigation() {
 				</ul>
 			</nav>
 			<Switch>
-				<Route path="/add-block">
-					<AddBlock />
+				<Route path="/block-info/:id">
+					<BlockInfo singleBlock={true} />
+				</Route>
+				<Route path="/add-block/">
+					<BlockInfo singleBlock={false} />
 				</Route>
 				<Route path="/">
 					<ListBlocks />
